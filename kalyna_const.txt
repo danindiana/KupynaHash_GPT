@@ -1,3 +1,5 @@
+SEE: https://www.cryptopp.com/wiki/Kalyna
+
 In n the "A New Encryption Standard of Ukraine: The Kalyna Block Cipher" document what does Substitution −1π0 S-boxes represent? Where should I put those values in kalyna_constants.h?
 
 The Substitution −1π0 S-boxes in the "A New Encryption Standard of Ukraine: The Kalyna Block Cipher" document represent the inverse substitution boxes used during the decryption process of the Kalyna block cipher.
