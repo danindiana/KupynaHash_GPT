@@ -1,0 +1,19 @@
+In n the "A New Encryption Standard of Ukraine: The Kalyna Block Cipher" document what does Substitution −1π0 S-boxes represent? Where should I put those values in kalyna_constants.h?
+
+The Substitution −1π0 S-boxes in the "A New Encryption Standard of Ukraine: The Kalyna Block Cipher" document represent the inverse substitution boxes used during the decryption process of the Kalyna block cipher.
+
+During encryption, the Kalyna cipher uses the S-boxes to perform a substitution step, where bytes are replaced according to a lookup table (S-boxes). The Inverse S-boxes are used for the reverse substitution step during decryption to get back the original data from the ciphertext. The purpose of the inverse S-box is to reverse the substitution performed by the corresponding S-box during the encryption process.
+
+In the kalyna_constants.h file, you should define a separate array for these inverse S-box values, similar to how you define the original S-box. You can name it something like KALYNA_INV_SBOX. This inverse S-box will be used in the kalyna_transform.cpp file during the decryption process.
+
+Here is an example of how you might define the inverse S-box in kalyna_constants.h:
+
+static const uint8_t KALYNA_INV_SBOX[256] = {
+    // Put the values of the inverse S-box here
+    // ...
+};
+
+
+And you would use this array in the decryption function within the kalyna_transform.cpp file when you need to perform the inverse substitution step.
+
+
